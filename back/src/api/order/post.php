@@ -8,7 +8,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 function postOrder($code, $total, $tax)
 {
-    $addPRoduct = myPDO->prepare("INSERT INTO orders(code, total, tax) VALUES ('$code', $total, $tax)");
+    $addPRoduct = myPDO->prepare("INSERT INTO orders(code, total, tax) VALUES (:code, :total, :tax)");
+    $addPRoduct->bindParam(":code", $code, PDO::PARAM_INT);
+    $addPRoduct->bindParam(":total", $total, PDO::PARAM_INT);
+    $addPRoduct->bindParam(":tax", $tax, PDO::PARAM_INT);
     $addPRoduct->execute();
 };
 

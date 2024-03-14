@@ -7,7 +7,8 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 function deleteOrderItem($code)
 {
-    $removeOrderItem = myPDO->prepare("DELETE FROM ORDER_ITEM WHERE CODE = {$code}");
+    $removeOrderItem = myPDO->prepare("DELETE FROM ORDER_ITEM WHERE CODE = :code");
+    $removeOrderItem->bindParam(":code", $code, PDO::PARAM_INT);
     $removeOrderItem->execute();
 };
 

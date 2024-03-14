@@ -10,7 +10,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 function postCategories($code, $name, $tax)
 {
 
-    $result = myPDO->prepare("INSERT INTO CATEGORIES(code, name, tax) VALUES('$code', '$name', '$tax')");
+    $result = myPDO->prepare("INSERT INTO CATEGORIES(code, name, tax) VALUES(:code, :name, :tax)");
+    $result->bindParam(":code", $code, PDO::PARAM_INT);
+    $result->bindParam(":name", $name, PDO::PARAM_STR);
+    $result->bindParam(":tax", $tax, PDO::PARAM_INT);
     $result->execute();
     print_r($code, $name, $tax);
 };

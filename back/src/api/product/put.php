@@ -11,7 +11,11 @@ $method = $_SERVER['REQUEST_METHOD'];
 function postProduct($name, $price, $category_code, $amount)
 {
 
-    $result = myPDO->prepare("INSERT INTO PRODUCTS(name, price, category_code, amount) VALUES( '$name', '$price', '$category_code', '$amount')");
+    $result = myPDO->prepare("INSERT INTO PRODUCTS(name, price, category_code, amount) VALUES( :name, :price, :category_code, :amount)");
+    $result->bindParam(":name", $name, PDO::PARAM_STR);
+    $result->bindParam(":price", $price, PDO::PARAM_INT);
+    $result->bindParam(":category_code", $category_code, PDO::PARAM_INT);
+    $result->bindParam(":amount", $amount, PDO::PARAM_INT);
     $result->execute();
 };
 

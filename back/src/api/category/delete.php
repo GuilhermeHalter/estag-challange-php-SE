@@ -7,7 +7,8 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 function deleteCategory($code)
 {
-    $stmt = myPDO->prepare("DELETE FROM CATEGORIES WHERE code = {$code}");
+    $stmt = myPDO->prepare("DELETE FROM CATEGORIES WHERE code = :code");
+    $stmt->bindParam(":code", $code, PDO::PARAM_INT);
     $stmt->execute();
 };
 switch ($method) {
