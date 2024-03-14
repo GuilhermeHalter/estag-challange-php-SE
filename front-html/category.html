@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/global/global.css"
+      media="screen"
+    />
+    <title>Categories</title>
+  </head>
+  <body>
+    <header>
+      <h1>Suite Store</h1>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="category.html">Categories</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="div1">
+        <form method="get" id="form-category">
+          <input
+            type="number"
+            id="code"
+            name="code"
+            class="modal-field"
+            placeholder="Code"
+            required
+          />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="modal-field"
+            placeholder="Category name"
+            required
+          />
+          <div class="conponents">
+            <input
+              type="number"
+              id="tax"
+              name="tax"
+              class="modal-field"
+              placeholder="Tax"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submit" id="submit" name="submit" onclick="postCategory()">Add Category</button>
+        </form>
+      </div>
+      <hr class="division" />
+      <div class="div2">
+        <table id="crudTable">
+          <thead>
+            <tr class="titles">
+              <th>Code</th>
+              <th>Category</th>
+              <th>Tax</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="assets/js/functionsCategory.js"></script>
+    
+  </body>
+</html>

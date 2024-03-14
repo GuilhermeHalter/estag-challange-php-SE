@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/global/global.css"
+      media="screen"
+    />
+    <title>Product</title>
+  </head>
+  <body>
+    <header>
+      <h1>Suite Store</h1>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="category.html">Categories</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="div1">
+        <form method="get" id="form">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="modal-field"
+            placeholder="Product Name"
+            required
+          />
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="modal-field"
+            placeholder="Unit price"
+            required
+          />
+
+          <select name="category_code" id="category_code"></select>
+          
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            class="modal-field"
+            placeholder="amont"
+            required
+          />
+          <button type="submit" class="Update" id="salvar" onclick="postProduct()">Add Product</button>
+        </form>
+      </div>
+
+      <hr class="division" />
+
+      <div class="div2">
+        <table id="crudTable">
+          <thead>
+            <tr class="titles">
+              <th>Code</th>
+              <th>Name</th>
+              <th>price</th>
+              <th>Category Code</th>
+              <th>amount</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="container">
+          <span id="view"></span>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/functionsProduct.js"></script>
+  </body>
+</html>

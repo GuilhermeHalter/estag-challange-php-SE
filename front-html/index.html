@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/global/global.css"
+      media="screen"
+    />
+    <title>Ponto de vendas</title>
+  </head>
+  <body>
+    <header>
+      <h1>Suite Store</h1>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="category.html">Categories</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="div1">
+        <form id="form" class="form">
+          <select name="select" id="select">
+            <option value="">Produtos</option>
+          </select>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            placeholder="Amount"
+            required
+          />
+
+          <input
+            type="number"
+            id="tax"
+            name="tax"
+            placeholder="Tax"
+            required
+            disabled
+          />
+
+          <input
+            type="number"
+            id="price"
+            name="price"
+            placeholder="Price"
+            required
+            disabled
+          />
+
+          <button type="submit" class="add-product" id="salvar">
+            Add Product
+          </button>
+        </form>
+      </div>
+      <hr class="division" />
+      <div class="div2">
+        <table id="crudTable">
+          <thead>
+            <tr class="titles">
+              <th><h3>code</h3></th>
+              <th><h3>Product</h3></th>
+              <th><h3>Amount</h3></th>
+              <th><h3>Price</h3></th>
+              <th><h3>Category Code</h3></th>
+              <th><h3>Total</h3></th>
+              <th><h3>Delete</h3></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+
+        <section id="all-products"></section>
+
+        <form method="get" class="compra" id="compra">
+          <div class="form-carrinho">
+            <div class="tax">
+              <label for="Tax">Tax:</label>
+              <input type="text"  name="tax" id="final-tax" disabled/>
+            </div>
+            <div class="total">
+              <label for="Total">Total:</label>
+              <input type="text"  name="total" id="total" disabled/>
+            </div>
+
+            <div class="check">
+              <button class="primary-button" id="cancel">Cancel</button>
+              <button class="finish-button" id="finish-button" onclick="cartToHistory()">Finish</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="assets/js/functionsHome.js"></script>
+  </body>
+</html>
