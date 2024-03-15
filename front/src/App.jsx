@@ -9,7 +9,6 @@ function App() {
   return (
     <>
     <Header />
-    <p>Olá mundo</p>
     <div className="container">
         <Outlet/>
     </div>

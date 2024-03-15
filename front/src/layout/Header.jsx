@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <nav className="navbar">
+
+            <h1>Suite Store</h1>
+
             <ul>
                 <li >
                     <Link to={"/"} className="Option">Home</Link>
