@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
+        <div>
         <nav className="navbar">
 
             <h1>Suite Store</h1>
@@ -22,6 +23,8 @@ const Header = () => {
                 </li>
             </ul>
         </nav>
+        </div>
+        
     );
 }
 

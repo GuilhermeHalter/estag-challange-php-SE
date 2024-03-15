@@ -6,6 +6,15 @@
     max-width: 50%;
 }
 
+h1{
+    color: antiquewhite;
+}
+
+.icon{
+    color: antiquewhite;
+    
+}
+
 .inp{
     border-radius: 3px;
     border: 1px solid rgb(37, 64, 151);
