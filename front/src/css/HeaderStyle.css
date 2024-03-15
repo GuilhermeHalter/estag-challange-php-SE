@@ -1,0 +1,37 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgb(37, 64, 151);
+    
+}
+
+.navbar ul {
+    display: flex;
+    gap: 2rem;
+    font-size: 19px;
+    list-style: none;
+}
+
+.navbar li:hover{
+    transition: 1.5s;
+    color: azure;
+    transform: scale(1.2, 1.2);
+    font-family: 'Lora', serif;
+}
+
+.Option{
+    text-decoration: none;
+    color: wheat;
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    
+}
+.Option:hover{
+    cursor: pointer;
+    color:rgb(255, 174, 0);
+    transition: 1s;
+    font-family: 'Lora', serif;
+}
