@@ -1,18 +1,13 @@
 import "/src/css/CategoryStyle.css"
+import CategoryComp from "../../components/category/CategoryComp";
+import CategoryCompForm from "../../components/category/CategoryCompForm";
 
 const CategoryBody = () => {
     return(
         <div className="global">
             <div className="main">
 
-            <div className="form">
-                <input type="number" className="inp" placeholder="Code"/>
-                <input type="text" className="inp" placeholder="Category name"/>
-                <input type="number" className="inp" placeholder="Tax"/>
-                <button className="submit">Add Category</button>
-
-            </div>
-
+            <CategoryCompForm/>
             
             <div className="division">
               <hr className="division"/>  
@@ -21,18 +16,13 @@ const CategoryBody = () => {
                 <table>
                     <thead>
                         <tr>
-                            <th>olha</th>
-                            <th>olha</th>
-                            <th>olha</th>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Tax</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>olha</td>
-                            <td>olha</td>
-                            <td>olha</td>
-                        </tr>
-                    </tbody>
+                            <CategoryComp />
                 </table>
             </div>
             </div>

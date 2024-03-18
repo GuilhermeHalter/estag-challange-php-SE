@@ -7,23 +7,21 @@ include('../configs.php');
 $method = $_SERVER['REQUEST_METHOD'];
 
 
-function postCategories($code, $name, $tax)
+function postCategories( $name, $tax)
 {
 
-    $result = myPDO->prepare("INSERT INTO CATEGORIES(code, name, tax) VALUES(:code, :name, :tax)");
-    $result->bindParam(":code", $code, PDO::PARAM_INT);
+    $result = myPDO->prepare("INSERT INTO CATEGORIES(name, tax) VALUES( :name, :tax)");
     $result->bindParam(":name", $name, PDO::PARAM_STR);
     $result->bindParam(":tax", $tax, PDO::PARAM_INT);
     $result->execute();
-    print_r($code, $name, $tax);
+    print_r( $name, $tax);
 };
 
 
 switch ($method) {
     case "POST":
-        $code = $_POST['code'];
         $name = $_POST['name'];
         $tax  = $_POST['tax'];
-        echo postCategories($code, $name, $tax);
+        echo postCategories($name, $tax);
         break;
 }
