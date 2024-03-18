@@ -34,6 +34,14 @@ h1{
     margin-top: 10px;
 }
 
+.inp_select{
+    border-radius: 3px;
+    border: 1px solid rgb(37, 64, 151);
+    display: block;
+    width: 76%;
+    height: 30px;
+    margin-top: 10px;
+}
 
 .submit{
     border-radius: 3px;

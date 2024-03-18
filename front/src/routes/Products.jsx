@@ -1,7 +1,9 @@
+import ProductBody from "../layout/body/ProductBody";
+
 const Products = () => {
     return(
         <div>
-            Products
+            <ProductBody />
         </div>
     );
 

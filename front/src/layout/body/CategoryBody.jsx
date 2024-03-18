@@ -3,17 +3,17 @@ import "/src/css/CategoryStyle.css"
 const CategoryBody = () => {
     return(
         <div className="global">
-            <div className="formCenter">
+            <div className="main">
 
             <div className="form">
-                <input type="number" className="inp"/>
-                <input type="text" className="inp"/>
-                <input type="number" className="inp"/>
+                <input type="number" className="inp" placeholder="Code"/>
+                <input type="text" className="inp" placeholder="Category name"/>
+                <input type="number" className="inp" placeholder="Tax"/>
                 <button className="submit">Add Category</button>
 
             </div>
 
-            </div>
+            
             <div className="division">
               <hr className="division"/>  
             </div>
@@ -34,6 +34,7 @@ const CategoryBody = () => {
                         </tr>
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
     );
