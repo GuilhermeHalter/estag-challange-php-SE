@@ -20,11 +20,9 @@ const CategoryForm = () => {
 
     categoryForm.append('name',name);
     categoryForm.append('tax',tax);
-    console.log(data)
 
     try{
         const response = await axios.post(`${ApiUrl}post.php`, categoryForm);
-        console.log(response);
     }catch(error){
         console.log(error);
     }

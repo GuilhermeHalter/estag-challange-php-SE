@@ -1,20 +1,11 @@
 import "/src/css/HomeStyle.css"
+import HomeForm from "../../components/home/HomeCompForm";
 
 const HomeBody = () => {
     return(
         <div className="global">
             <div className="main">
-
-            <div className="form">
-                <select name="category" className="inp_select"></select>
-                <input type="text" className="inp" placeholder="Amount"/>
-                <input type="number" className="inp" placeholder="Tax"/>
-                <input type="number" className="inp" placeholder="Price"/>
-                <button className="submit">Add in Cart</button>
-
-            </div>
-
-            
+                <HomeForm/>
             <div className="division">
               <hr className="division"/>  
             </div>
@@ -39,6 +30,23 @@ const HomeBody = () => {
                         </tr>
                     </tbody>
                 </table>
+                <form method="get" class="compra" id="compra">
+                    <div class="form-carrinho">
+                      <div class="tax">
+                        <label for="Tax">Tax:</label>
+                        <input type="text" className="inp" name="tax" id="final-tax" disabled/>
+                      </div>
+                      <div class="total">
+                        <label for="Total">Total:</label>
+                        <input type="text" className="inp" name="total" id="total" disabled/>
+                      </div>
+
+                      <div class="check">
+                        <button className="submit" id="cancel">Cancel</button>
+                        <button className="submit-finish" id="finish-button" onclick="cartToHistory()">Finish</button>
+                      </div>
+                    </div>
+                </form>
             </div>
             </div>
         </div>

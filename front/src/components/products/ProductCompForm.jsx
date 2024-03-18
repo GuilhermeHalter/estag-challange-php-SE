@@ -4,10 +4,10 @@ import axios from "axios";
 import "/src/css/ProductStyle.css"
 
 const ApiUrl = import.meta.env.VITE_Api_UrlProduct;
-const UrlGetCategory = import.meta.env.VITE_Api_UrlCategory;
+const UrlCategory = import.meta.env.VITE_Api_UrlCategory;
 
 const ProductForm = () =>{
-    const [category, setCategories] = useState()
+    const [category, setCategories] = useState();
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [category_code, setCategory_code] = useState('');
@@ -17,17 +17,15 @@ const ProductForm = () =>{
         const getCategory = async () => {
             try{
                 const responses = await axios.get(
-                    `${UrlGetCategory}get.php`
+                    `${UrlCategory}get.php`
                 );
                 const data = responses;
-                console.log(data);
                 setCategories(data.data);
             }catch(error){
                 console.log(error);
             }
         }
         getCategory();
-        console.log(getCategory())
     }, []);
 
     
@@ -46,11 +44,9 @@ const ProductForm = () =>{
     productForm.append('price', price);
     productForm.append('category_code', category_code);
     productForm.append('amount', amount);
-    console.log(data)
 
     try{
         const response = await axios.post(`${ApiUrl}post.php`, productForm);
-        console.log(response);
     }catch(error){
         console.log(error);
     }
@@ -62,8 +58,6 @@ const ProductForm = () =>{
         ProductPost(e);
         e.target.reset();
     }
-
-
 
     return(
         <>

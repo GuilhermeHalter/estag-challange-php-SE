@@ -15,7 +15,6 @@ const CategoryComp = () =>{
             );
             const data = response.data
             setCategory(data)
-            console.log(data)
         }catch(error){
             console.error("Error fetching data:", error);
         }
