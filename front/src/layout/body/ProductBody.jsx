@@ -1,20 +1,12 @@
 import "/src/css/ProductStyle.css"
+import ProductComp from "../../components/products/ProductComp";
+import ProductForm from "../../components/products/ProductCompForm";
 
 const ProductBody = () => {
     return(
         <div className="global">
             <div className="main">
-
-            <div className="form">
-                <input type="text" className="inp" placeholder="Product name"/>
-                <input type="number" className="inp" placeholder="Price"/>
-                <select name="category" className="inp_select"></select>
-                <input type="number" className="inp" placeholder="Amount"/>
-                <button className="submit">Add Product</button>
-
-            </div>
-
-            
+            <ProductForm />
             <div className="division">
               <hr className="division"/>  
             </div>
@@ -22,20 +14,15 @@ const ProductBody = () => {
                 <table>
                     <thead>
                         <tr>
-                            <th>olha</th>
-                            <th>olha</th>
-                            <th>olha</th>
-                            <th>olha</th>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category code</th>
+                            <th>Amount</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>olha</td>
-                            <td>olha</td>
-                            <td>olha</td>
-                            <td>olha</td>
-                        </tr>
-                    </tbody>
+                        <ProductComp />
                 </table>
             </div>
             </div>
