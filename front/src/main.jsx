@@ -7,6 +7,8 @@ import Products from './routes/Products.jsx'
 import Category from './routes/Category.jsx'
 import History from './routes/History.jsx'
 
+import { Provider } from 'react-redux';
+import store from '/src/rdx/store';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import './index.css'
@@ -37,6 +39,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

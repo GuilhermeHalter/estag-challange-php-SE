@@ -37,7 +37,6 @@ const CategoryComp = () =>{
                 <tbody>
                 {category?.map((categoria) => (
                             <tr key={categoria.code}>
-                                
                                     <td>{categoria.code}</td>
                                     <td>{categoria.name}</td>
                                     <td>{categoria.tax}</td> 
