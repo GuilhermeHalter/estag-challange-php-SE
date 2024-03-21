@@ -1,44 +1,32 @@
 import { useDispatch } from "react-redux";
-import { deleteProductFromCart } from "/src/rdx/cart/action"
-import { useState } from "react";
-
-const HomeComp = (product) => {
-
-    const [cart, setCart] = useState([]);
-
-    function deleteCart(code) {
-        setCart(cart.filter(product => product.code !== code))
-    };
-
-    const total = (product.price * product.amount).toFixed(2);
+import { deleteProductFromCart } from "../../rdx/cart/action";
+import "/src/css/HomeStyle.css"
 
 
-    return (
-        <>
-            {cart.length === 0 ? (
-                <tr><td>Carregando...</td></tr>
-            ) : (
-                <tbody>
-                    {cart?.map((product) => (
-                        <tr key={product.code}>
-                            <td>{product.code}</td>
-                            <td>{product.name}</td>
-                            <td>{product.amount}</td>
-                            <td>{product.price}</td>
-                            <td>{product.categoryName}</td>
-                            <td>{total}</td>
-                            <td>
-                                <button onClick={() => deleteCart(product.code)} >Delete</button>
-                            </td>
-                        </tr>
-                        ))}
-                </tbody>
+const HomeTable = ({ product }) => {
+  const total = product.price * product.amount;
 
+  const dispatch = useDispatch();
 
-            )}
+  const deleteProductButton = async (code) => {
+    dispatch(deleteProductFromCart(code));
+  };
 
-        </>
-    )
-}
+  return (
+    <>
+      <tr key={product.code}>
+        <td>{product.code}</td>
+        <td>{product.name}</td>
+        <td>{product.amount}</td>
+        <td>{product.price}</td>
+        <td>{product.categoryName}</td>
+        <td>{total}</td>
+        <td>
+          <button  className="buttonDelete" onClick={() => deleteProductButton(product.code)}>Delete</button>
+        </td>
+      </tr>
+    </>
+  );
+};
 
-export default HomeComp
+export default HomeTable;

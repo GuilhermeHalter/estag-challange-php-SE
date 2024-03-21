@@ -1,13 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addProductToCart } from "/src/rdx/cart/action";
-
+import { addProductToCart } from "../../rdx/cart/action";
+import "/src/css/HomeStyle.css"
 
 const UrlProduct = import.meta.env.VITE_Api_UrlProduct;
 
 const HomeForm = () => {
-
     const [products, setProducts] = useState([]);
     const [product, setProduct] = useState("");
     const [amount, setAmount] = useState("");
@@ -15,26 +14,6 @@ const HomeForm = () => {
     const [name, setName] = useState("");
     const [categoryName, setCategoryName] = useState("");
     const [price, setPrice] = useState("");
-
-
-    useEffect(() => {
-        const getProducts = async () => {
-            try {
-                const responses = await axios.get(
-                    `${UrlProduct}get.php`
-                );
-                const data = responses;
-                setProducts(data.data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getProducts();
-    }, []);
-
-      const dispatch = useDispatch();
-
-
 
     const clearFormAfterSubmit = () => {
         setTax("");
@@ -55,6 +34,20 @@ const HomeForm = () => {
         changeTaxPrice();
     }, [product]);
 
+    useEffect(() => {
+        const getProducts = async () => {
+            try {
+                const res = await axios.get(`${UrlProduct}get.php`);
+                const data = res.data;
+                setProducts(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getProducts();
+    }, []);
+    const dispatch = useDispatch();
+
     const handleProductClick = () => {
         dispatch(
             addProductToCart({
@@ -73,48 +66,62 @@ const HomeForm = () => {
         clearFormAfterSubmit();
         e.target.reset();
     };
-
     return (
         <>
+
             <form className="form" onSubmit={addFinalProduct}>
-                <select name="product" className="inp_select" onChange={(e) => setProduct(e.target.value)}>
-                    <option hidden>Select Product</option>
-                    {products?.map((produto) => (
-                        <option key={produto.code} value={produto.code}>
-                            {produto.name}
+                <select name="products" id="products" className="inp_select" required onChange={(e) => setProduct(e.target.value)}>
+                    <option>Select a Product</option>
+                    {products?.map((prod) => (
+                        <option key={prod.code} value={prod.code}>
+                            {prod.name}
                         </option>
                     ))}
                 </select>
-                <input type="number" 
-                    className="inp" 
-                    placeholder="Amount"
-                    name="amount"
-                    id="amount" 
-                    min={1} value={amount} 
-                    max={products.find((prod) => prod.code == product)?.amount}
-                    onChange={(e) => {setAmount(e.target.value);}} 
-                />
-                <input 
-                    className="inp" 
-                    id="tax" 
-                    name="tax"
-                    placeholder="Tax" 
-                    value={tax}
-                    onChange={(e) => {setTax(e.target.value);}} 
-                />
-                <input 
-                    className="inp"
-                    id="price"
-                    name="price" 
-                    placeholder="Price" 
-                    value={price}
-                    onChange={(e) => {setPrice(e.target.value);}} 
-                />
-                <button type="submit" className="submit">Add in Cart</button>
 
+                <input
+                    required
+                    placeholder="Amount"
+                    type="number"
+                    name="amount"
+                    min={1}
+                    className="inp"
+                    value={amount}
+                    max={products.find((prod) => prod.code == product)?.amount}
+                    onChange={(e) => {
+                        setAmount(e.target.value);
+                    }}
+                />
+
+                <input
+                    disabled
+                    className="inp"
+                    placeholder="Tax"
+                    type="number"
+                    name="tax"
+                    value={tax}
+                    onChange={(e) => {
+                        setTax(e.target.value);
+                    }}
+                />
+
+                <input
+                    disabled
+                    className="inp"
+                    placeholder="Price"
+                    type="number"
+                    name="price"
+                    value={price}
+                    onChange={(e) => {
+                        setPrice(e.target.value);
+                    }}
+                />
+                <button className="submit" type="submit">
+                    Add product
+                </button>
             </form>
         </>
-    )
-}
+    );
+};
 
-export default HomeForm
+export default HomeForm;

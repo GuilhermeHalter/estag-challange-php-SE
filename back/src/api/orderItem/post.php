@@ -9,16 +9,17 @@ $method = $_SERVER['REQUEST_METHOD'];
 function postOrderItem($order_code, $product_code, $amount, $price, $tax)
 {
     $addPRoduct = myPDO->prepare("INSERT INTO ORDER_ITEM(order_code, product_code, amount, price, tax) VALUES (:order_code, :product_code, :amount, :price, :tax)");
-    $addPRoduct->bindParam(":order_code", $order_code, PDO::PARAM_INT);
-    $addPRoduct->bindParam(":product_code", $product_code, PDO::PARAM_INT);
-    $addPRoduct->bindParam(":amount", $amount, PDO::PARAM_INT);
-    $addPRoduct->bindParam(":price", $price, PDO::PARAM_INT);
-    $addPRoduct->bindParam(":tax", $tax, PDO::PARAM_INT);
+    $addPRoduct->bindParam(":order_code", $order_code);
+    $addPRoduct->bindParam(":product_code", $product_code);
+    $addPRoduct->bindParam(":amount", $amount);
+    $addPRoduct->bindParam(":price", $price);
+    $addPRoduct->bindParam(":tax", $tax);
     $addPRoduct->execute();
 };
 
-switch ($method) {
+switch ( $method) {
     case "POST":
+
         $order_code = $_POST["order_code"];
         $product_code = $_POST["product_code"];
         $amount = $_POST["amount"];

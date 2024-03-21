@@ -6,20 +6,18 @@ include('../configs.php');
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-function postOrder($code, $total, $tax)
+function postOrder( $total, $tax)
 {
-    $addPRoduct = myPDO->prepare("INSERT INTO orders(code, total, tax) VALUES (:code, :total, :tax)");
-    $addPRoduct->bindParam(":code", $code, PDO::PARAM_INT);
-    $addPRoduct->bindParam(":total", $total, PDO::PARAM_INT);
-    $addPRoduct->bindParam(":tax", $tax, PDO::PARAM_INT);
+    $addPRoduct = myPDO->prepare("INSERT INTO orders( total, tax) VALUES ( :total, :tax)");
+    $addPRoduct->bindParam(":total", $total);
+    $addPRoduct->bindParam(":tax", $tax);
     $addPRoduct->execute();
 };
 
 switch ($method) {
     case "POST":
-        $code = $_POST["code"];
         $total = $_POST["total"];
         $tax = $_POST["tax"];
-        echo postOrder($code, $total, $tax);
+        echo postOrder( $total, $tax);
         break;
 }
