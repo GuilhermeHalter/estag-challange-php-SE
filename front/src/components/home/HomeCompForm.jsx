@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../lib/axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../rdx/cart/action";
@@ -51,7 +51,7 @@ const HomeForm = () => {
     const handleProductClick = () => {
         dispatch(
             addProductToCart({
-                code: product,
+                code: parseFloat(product),
                 name: name,
                 amount: amount,
                 tax: tax,

@@ -35,7 +35,7 @@ const HomeBody = () => {
             <tbody>
 
               {products.map((product) => (
-                <HomeTable key={product.code} product={product} setCart={setCart} cart={cart} />
+                <HomeTable setCart={setCart} cart={cart} key={product.code} product={product}  />
               ))}
             </tbody>
           </table>

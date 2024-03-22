@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "/src/components/category/CategoryComp.css"
-import axios from "axios";
+import axios from "../../lib/axios";
 
 const ApiUrl = import.meta.env.VITE_Api_UrlCategory;
 

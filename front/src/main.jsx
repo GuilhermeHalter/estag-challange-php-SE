@@ -6,6 +6,7 @@ import Home from "./routes/Home.jsx"
 import Products from './routes/Products.jsx'
 import Category from './routes/Category.jsx'
 import History from './routes/History.jsx'
+import ViewItem from './routes/ViewItem.jsx'
 
 import { Provider } from 'react-redux';
 import store from '/src/rdx/store';
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:"/history",
         element: <History />
+      },
+      {
+        path:"/viewItem/:code",
+        element: <ViewItem />
       },
     ],
   },
