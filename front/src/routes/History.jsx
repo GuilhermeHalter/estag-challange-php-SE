@@ -1,9 +1,9 @@
 import HistoryBody from "../layout/body/HistoryBody";
 
 const History = () => {
-    return(
+    return (
         <div>
-           <HistoryBody />
+            <HistoryBody />
         </div>
     );
 

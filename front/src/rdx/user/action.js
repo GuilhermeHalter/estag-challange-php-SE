@@ -5,6 +5,6 @@ export const loginUser = (payload) => ({
   payload,
 });
 
-export const logoutUser = () => ({ 
-    type: userActionTypes.LOGOUT 
-    });
+export const logoutUser = () => ({
+  type: userActionTypes.LOGOUT
+});

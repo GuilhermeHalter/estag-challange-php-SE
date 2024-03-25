@@ -1,9 +1,9 @@
 import ViewDetails from "../layout/body/ViewItemBody";
 
 const ViewItem = () => {
-    return(
+    return (
         <div>
-           <ViewDetails />
+            <ViewDetails />
         </div>
     );
 

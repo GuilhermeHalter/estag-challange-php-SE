@@ -8,10 +8,10 @@ function App() {
 
   return (
     <>
-    <Header />
-    <div className="container">
-        <Outlet/>
-    </div>
+      <Header />
+      <div className="container">
+        <Outlet />
+      </div>
     </>
   )
 }

@@ -1,44 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-.navbar{
+.navbar {
     display: flex;
     font-family: 'Lora', serif;
     justify-content: space-between;
     align-items: center;
     padding-left: 30px;
     padding-right: 30px;
-    background: rgb(70,178,252);
-    background: linear-gradient(309deg, rgba(70,178,252,1) 0%, rgba(66,102,255,1) 100%);
-    
+    background: rgb(70, 178, 252);
+    background: linear-gradient(309deg, rgba(70, 178, 252, 1) 0%, rgba(66, 102, 255, 1) 100%);
+
 }
 
 .navbar ul {
     display: flex;
-    gap: 2rem;    
+    gap: 2rem;
     font-family: 'Lora', serif;
     font-size: 19px;
     list-style: none;
 }
 
-.navbar li:hover{
+.navbar li:hover {
     transition: 1.5s;
     color: azure;
     transform: scale(1.2, 1.2);
     font-family: 'Lora', serif;
 }
 
-.Option{
+.Option {
     text-decoration: none;
     color: wheat;
     font-family: 'Lora', serif;
     font-size: 18px;
     font-family: 'Lora', serif;
-    
+
 }
-.Option:hover{
+
+.Option:hover {
     cursor: pointer;
     font-family: 'Lora', serif;
-    color:rgb(255, 174, 0);
+    color: rgb(255, 174, 0);
     transition: 1s;
     font-family: 'Lora', serif;
 }

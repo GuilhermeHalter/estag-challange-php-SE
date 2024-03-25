@@ -1,9 +1,9 @@
 import CategoryBody from "../layout/body/CategoryBody";
 
 const Category = () => {
-    return(
+    return (
         <div>
-            <CategoryBody/>
+            <CategoryBody />
         </div>
     );
 

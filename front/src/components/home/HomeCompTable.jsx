@@ -22,7 +22,7 @@ const HomeTable = ({ product }) => {
         <td>{product.categoryName}</td>
         <td>{total}</td>
         <td>
-          <button  className="buttonDelete" onClick={() => deleteProductButton(product.code)}>Delete</button>
+          <button className="buttonDelete" onClick={() => deleteProductButton(product.code)}>Delete</button>
         </td>
       </tr>
     </>

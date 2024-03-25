@@ -23,31 +23,31 @@ const HomeBody = () => {
           <table>
             <thead>
               <tr>
-              <th>Code</th>
-              <th>Product</th>
-              <th>Amount</th>
-              <th>Price</th>
-              <th>Category</th>
-              <th>Total</th>
-              <th>Delete</th>
+                <th>Code</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Total</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
 
               {products.map((product) => (
-                <HomeTable setCart={setCart} cart={cart} key={product.code} product={product}  />
+                <HomeTable setCart={setCart} cart={cart} key={product.code} product={product} />
               ))}
             </tbody>
           </table>
           <form id='compra' className='compra'>
-              <TotalTaxIndex />
-          
+            <TotalTaxIndex />
+
             <div className="check">
               <FinishCancel />
             </div>
-            
+
           </form>
-          
+
         </div>
       </div>
     </div>

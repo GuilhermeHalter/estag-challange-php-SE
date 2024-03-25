@@ -49,13 +49,13 @@ const ViewDetails = () => {
   console.log(order);
 
   return (
-    <div className="main">
-    
-    <div className="table">
-      <TableDetails orderItems={orderItems} />
-    </div>
-         
-     
+    <div className="main main-view">
+
+      <div className="table">
+        <TableDetails orderItems={orderItems} />
+      </div>
+
+
 
       <div className="total-info">
         <h3 className="tax-paid">Taxes you paid: {order.tax}</h3>

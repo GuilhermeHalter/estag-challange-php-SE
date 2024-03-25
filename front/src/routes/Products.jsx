@@ -1,7 +1,7 @@
 import ProductBody from "../layout/body/ProductBody";
 
 const Products = () => {
-    return(
+    return (
         <div>
             <ProductBody />
         </div>
