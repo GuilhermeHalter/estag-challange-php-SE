@@ -26,7 +26,7 @@ const ProductComp = () => {
 
     useEffect(()=>{
         getProducts();
-    }, []);
+    }, [getProducts]);
 
     return (
         <>

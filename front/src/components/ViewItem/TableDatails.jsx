@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from '../../lib/axios';
-import ViewItemComp from './ViewItemCompTable';
+import TrDetails from './TrDetails';
 
 const UrlProduct = import.meta.env.VITE_Api_UrlProduct;
+
 
 const TableDetails = ({ orderItems }) => {
   const [products, setProducts] = useState([]);
@@ -35,7 +36,7 @@ const TableDetails = ({ orderItems }) => {
 
       <tbody>
         {orderItems?.map((order) => (
-          <ViewItemComp
+          <TrDetails
             key={order.code}
             order={order}
             product={products.find((product) => product.code == order.product_code)}

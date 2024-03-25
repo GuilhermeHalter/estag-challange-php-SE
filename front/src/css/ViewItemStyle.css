@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+    flex-wrap: wrap
+}
+.table{
+    display: block;
+    width: 100%;
+}
+
+.total{
+    color: black;
+}

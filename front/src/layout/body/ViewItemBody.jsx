@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import TableDetails from "../../components/ViewItem/ViewItemTable";
-import axios from "../../lib/axios";
-
-import { useParams } from "react-router-dom";
+import TableDetails from "../../components/ViewItem/TableDatails";
+import axios from "axios";
+import "../../css/ViewItemStyle.css";
 
 const UrlOrder = import.meta.env.VITE_Api_UrlOrder;
 const UrlOrderItem = import.meta.env.VITE_Api_UrlOrderItem;
+
+import { useParams } from "react-router-dom";
 
 const ViewDetails = () => {
   const { code } = useParams();
@@ -27,7 +28,6 @@ const ViewDetails = () => {
       const { data } = await axios.get(`${UrlOrderItem}get.php`);
       const items = data.filter((item) => item.order_code == code);
 
-      console.log(items);
       setOrderItems(items);
     } catch (error) {
       console.log(error);
@@ -47,17 +47,20 @@ const ViewDetails = () => {
     getOrder();
   }, [code]);
   console.log(order);
-  console.log(orderItems)
 
   return (
-    <div className="main main-view">
-      
+    <div className="main">
+    
+    <div className="table">
       <TableDetails orderItems={orderItems} />
+    </div>
+         
+     
 
       <div className="total-info">
         <h3 className="tax-paid">Taxes you paid: {order.tax}</h3>
 
-        <h1>Total: {order.total}</h1>
+        <h1 className="total">Total: {order.total}</h1>
       </div>
     </div>
   );

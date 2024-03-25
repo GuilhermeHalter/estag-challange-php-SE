@@ -8,16 +8,19 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 function postOrder($total, $tax)
 {
-    $addPRoduct = myPDO->prepare("INSERT INTO orders(total, tax) VALUES (:total, :tax)");
-    $addPRoduct->bindParam(":total", $total);
-    $addPRoduct->bindParam(":tax", $tax);
-    $addPRoduct->execute();
-};
+    $addOrder = myPDO->prepare("INSERT INTO orders(total, tax) VALUES (:total, :tax)");
+    $addOrder->bindParam(":total", $total);
+    $addOrder->bindParam(":tax", $tax);
+    $addOrder->execute();
+    return myPDO->lastInsertId();
+}
 
 switch ($method) {
     case "POST":
         $total = $_POST["total"];
         $tax = $_POST["tax"];
-        echo postOrder($total, $tax);
+        $order_code = postOrder($total, $tax);
+        echo $order_code;
         break;
 }
+?>

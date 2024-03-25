@@ -27,7 +27,7 @@ const CategoryComp = () =>{
 
     useEffect(() => {
         getCategories();
-    }, []);
+    }, [getCategories]);
 
     return (
         <>

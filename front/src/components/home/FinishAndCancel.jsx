@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { cancelCart } from '../../rdx/cart/action';
+import '../../css/HomeStyle.css';
 
  const UrlProducts = import.meta.env.VITE_Api_UrlProduct 
  const UrlOrders = import.meta.env.VITE_Api_UrlOrder
@@ -53,7 +54,7 @@ const FinishPurchase = () => {
 
     try{
       const response = await axios.post(`${UrlOrders}post.php`, order);
-      console.log(response);
+      console.table(response);
 
       for(const item of cart){
         const product = products.find((product)=> product.code == item.code);
@@ -70,7 +71,7 @@ const FinishPurchase = () => {
       cart.forEach(async (item) => {
   
         let form = new FormData();
-        form.append("order_code", Number(response.data.code));
+        form.append("order_code", response.data);
         form.append("product_code", item.code);
         form.append("amount", parseInt(item.amount));
         form.append("price", parseFloat(item.price) * parseInt(item.amount));
@@ -92,9 +93,8 @@ const FinishPurchase = () => {
   
   return(
     <>
-    <div className="main main-index" id="mainIndex">
-      <div className="finish-add">
-        <button className="primary-button" id="cancel" onClick={cancelPurchase}>
+      <div className="check">
+        <button className="cancel-button" id="cancel" onClick={cancelPurchase}>
           Cancel
         </button>
         <button
@@ -105,7 +105,6 @@ const FinishPurchase = () => {
           Finish
         </button>
       </div>
-    </div>
     </>
   );
 }

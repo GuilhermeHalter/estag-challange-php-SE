@@ -83,10 +83,10 @@ h1 {
     color: antiquewhite;
 }
 
-.submit-finish {
+.finish-button {
     margin-left: 10px;
     border-radius: 3px;
-    width: 76%;
+    width: 100px;
     height: 30px;
     font-family: 'Lora', serif;
     margin-top: 10px;
@@ -96,7 +96,27 @@ h1 {
     background-color: rgb(37, 64, 151);
 }
 
-.submit-finish:hover {
+.finish-button:hover {
+    transition: 0.5s;
+    font-family: 'Lora', serif;
+    color: rgb(37, 64, 151);
+    background-color: aliceblue;
+    border: 1px solid rgb(37, 64, 151);
+}
+
+.cancel-button {
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    font-family: 'Lora', serif;
+    margin-top: 10px;
+    border: none;
+    font-size: 15px;
+    color: aliceblue;
+    background-color: rgb(37, 64, 151);
+}
+
+.cancel-button:hover {
     transition: 0.5s;
     font-family: 'Lora', serif;
     color: rgb(37, 64, 151);
